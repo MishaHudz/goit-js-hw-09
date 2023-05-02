@@ -1,4 +1,4 @@
-// Описаний в документації
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
@@ -19,7 +19,11 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0].getTime() - Date.now() < 0) {
       startButton.disabled = true;
-      return alert('Please choose a date in the future');
+      //   return alert('Please choose a date in the future');
+      return Notify.failure('Please choose a date in the future', {
+        timeout: 2000,
+        showOnlyTheLastOne: true,
+      });
     }
     startButton.disabled = false;
     selectedDate = selectedDates[0].getTime();

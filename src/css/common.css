@@ -47,3 +47,8 @@ img {
   height: 35px;
   width: 60px;
 }
+
+[data-stop] {
+  height: 35px;
+  width: 60px;
+}
