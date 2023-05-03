@@ -32,4 +32,6 @@ formLink.addEventListener('submit', evt => {
       });
     firstDelay += stepDelay;
   }
+
+  formLink.reset();
 });
